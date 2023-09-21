@@ -35,7 +35,7 @@ MonthlyCharges = st.number_input('MonthlyCharges')
 
 if st.button('Model Predict'):
     data = pd.DataFrame({
-        'Dependants': [Dependents],
+        'Dependents': [Dependents],
         'tenure': [tenure],
         'OnlineSecurity': [OnlineSecurity],
         'OnlineBackup': [OnlineBackup],
