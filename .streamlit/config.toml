@@ -1,15 +1,6 @@
-from sklearn.metrics import classification_report, confusion_matrix, ConfusionMatrixDisplay
-
-# Display the confusion matrices for both models
-fig, axes = plt.subplots(2, 2, figsize=(12, 5))
-
-# Assuming you have 4 combinations (2 models x 2 resampling methods)
-for i, (model_name, _) in enumerate(models):
-    for j, (resample_name, _) in enumerate(resamples):
-        sns.heatmap(conf_matrices[2*i + j], annot=True, fmt='d', cmap='vlag', 
-                    xticklabels=['Predicted No', 'Predicted Yes'], 
-                    yticklabels=['Actual No', 'Actual Yes'], ax=axes[i][j])
-        axes[i][j].set_title(f"Confusion Matrix for {model_name} with {resample_name}");
-
-plt.tight_layout()
-plt.show()
+[theme]
+base="dark"
+primaryColor="#8600ff"
+secondaryBackgroundColor="#14183f"
+textColor="#a48888"
+font="monospace"
