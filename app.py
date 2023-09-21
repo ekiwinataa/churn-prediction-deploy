@@ -14,37 +14,37 @@ if 'model' not in st.session_state:
     model = pickle.load(open('model/model.sav', 'rb'))
     st.session_state['model'] = model
 
-dependant = st.selectbox('Dependants',
+Dependents = st.selectbox('Dependents',
                       ('Yes', 'No'))
-Tenure = st.number_input('Tenure')
-online_security = st.selectbox('Online Security',
+tenure = st.number_input('tenure')
+OnlineSecurity = st.selectbox('OnlineSecurity',
                       ('Yes', 'No'))
-online_backup = st.selectbox('Online Backup',
+OnlineBackup = st.selectbox('OnlineBackup',
                       ('Yes', 'No'))
-internet_service = st.selectbox('Internet Service',
+InternetService = st.selectbox('InternetService',
                       ('DSL', 'Fiber optic', 'No'))
-device_protection = st.selectbox('Device Protection',
+DeviceProtection = st.selectbox('DeviceProtection',
                       ('Yes', 'No'))
-tech_support = st.selectbox('Tech Support',
+TechSupport = st.selectbox('TechSupport',
                       ('Yes', 'No'))
-contract = st.selectbox('Contract',
+Contract = st.selectbox('Contract',
                       ('Month-to-month', 'Two year', 'One year'))
-paperless_billing = st.selectbox('Paperless Billing',
+PaperlessBilling = st.selectbox('PaperlessBilling',
                       ('Yes', 'No'))
-monthly_charges = st.number_input('Monthly Charges')
+MonthlyCharges = st.number_input('MonthlyCharges')
 
 if st.button('Model Predict'):
     data = pd.DataFrame({
-        'Dependants': [dependant],
-        'Tenure': [Tenure],
-        'Online Security': [online_security],
-        'Online Backup': [online_backup],
-        'Internet Service': [internet_service],
-        'Device Protection': [device_protection],
-        'Tech Support': [tech_support],
-        'Contract': [contract],
-        'Paperless Billing': [paperless_billing],
-        'Monthly Charges': [monthly_charges]
+        'Dependants': [Dependents],
+        'tenure': [tenure],
+        'OnlineSecurity': [OnlineSecurity],
+        'OnlineBackup': [OnlineBackup],
+        'InternetService': [InternetService],
+        'DeviceProtection': [DeviceProtection],
+        'TechSupport': [TechSupport],
+        'Contract': [Contract],
+        'PaperlessBilling': [PaperlessBilling],
+        'MonthlyCharges': [MonthlyCharges]
     })
     result = st.session_state['model'].predict(data)
     if result[0] == 0:
