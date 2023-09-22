@@ -4,11 +4,11 @@ import numpy as np
 import pandas as pd
 
 st.set_page_config(
-    page_title="Telco Customer Churn Prediction",
+    page_title="Telco Customer Churn Prediction App",
     page_icon=":iphone:"
 )
 
-st.title('Telco Customer Churn Prediction App')
+st.title('Telco Customer Churn Prediction')
 
 if 'model' not in st.session_state:
     model = pickle.load(open('model/model.sav', 'rb'))
