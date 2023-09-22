@@ -8,7 +8,7 @@ st.set_page_config(
     page_icon=":iphone:"
 )
 
-st.title('Telco Customer Churn Prediction Model Deployment')
+st.title('Telco Customer Churn Prediction App')
 
 if 'model' not in st.session_state:
     model = pickle.load(open('model/model.sav', 'rb'))
